@@ -1,4 +1,4 @@
-# simple-chat-app
+# Simple-chat-app
 
 ### Technologies Used
 
@@ -10,12 +10,13 @@
 
 #### Frameworks
 
-- ChakraUI
+* ChakraUI
 * ExpressJS
 * NodeJS
 * REST API
 
 #### Database Management System
+
 * MongoDB
 
 ### Installation Instructions
@@ -26,9 +27,9 @@
     * Open Terminal and navigate to the server directory.
     * Type `npm install` to install the dependencies automatically.
 
-4. Create an environment variable in the server folder
-    -Create a new file named `.env`
-    -Inside the '.env' file, input: 
+4. Create an environment variable in the server folder.
+    - Create a new file named `.env`
+    - Inside the '.env' file, input:  
     ```
     PORT=8000
     MONGO_URI=<insert the link from the connection string of your MongoDB account>
@@ -48,4 +49,3 @@
     * Navigate to the client directory.
     * Type `npm start`.
     * Wait until the client automatically redirects you to your current web browser.
-# simple-chat-app
