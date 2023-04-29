@@ -51,7 +51,7 @@ const Login = () => {
         status: "success",
         duration: 5000,
         isClosable: true,
-        position: "bottom",
+        position: "top",
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
@@ -63,7 +63,7 @@ const Login = () => {
         status: "error",
         duration: 5000,
         isClosable: true,
-        position: "bottom",
+        position: "top",
       });
       setLoading(false);
     }
@@ -73,9 +73,6 @@ const Login = () => {
     setLoading(true);
     // setEmail("guest@example.com");
     // setPassword("123456");
-
-
-    // console.log(email, password);
     try {
       const config = {
         headers: {
@@ -95,7 +92,7 @@ const Login = () => {
         status: "success",
         duration: 5000,
         isClosable: true,
-        position: "bottom",
+        position: "top",
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
@@ -107,7 +104,7 @@ const Login = () => {
         status: "error",
         duration: 5000,
         isClosable: true,
-        position: "bottom",
+        position: "top",
       });
       setLoading(false);
     }

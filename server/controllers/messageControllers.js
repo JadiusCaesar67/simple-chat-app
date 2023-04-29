@@ -1,7 +1,7 @@
-const asyncHandler = require("express-async-handler");
-const Message = require("../models/messageModel");
-const User = require("../models/userModel");
-const Chat = require("../models/chatModel");
+import asyncHandler from "express-async-handler";
+import { Message } from "../config/messageSchema.js";
+import { Chat } from "../config/chatSchema.js";
+import { User } from"../config/userSchema.js";
 
 //@description     Get all Messages
 //@route           GET /api/Message/:chatId
@@ -54,4 +54,4 @@ const sendMessage = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { allMessages, sendMessage };
+export { allMessages, sendMessage };
