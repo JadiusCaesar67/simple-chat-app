@@ -69,6 +69,50 @@ const Login = () => {
     }
   };
 
+    const submitGuestHandler = async () => {
+    setLoading(true);
+    // setEmail("guest@example.com");
+    // setPassword("123456");
+
+
+    // console.log(email, password);
+    try {
+      const config = {
+        headers: {
+          "Content-type": "application/json",
+        },
+      };
+
+      const { data } = await axios.post(
+        "/api/user/login",
+        { email:"guest@example.com", password:"123456" },
+        config
+      );
+
+      // console.log(JSON.stringify(data));
+      toast({
+        title: "Login Successful",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+      localStorage.setItem("userInfo", JSON.stringify(data));
+      setLoading(false);
+      history.push("/chats");
+    } catch (error) {
+      toast({
+        title: "Error Occured!",
+        description: error.response.data.message,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+      setLoading(false);
+    }
+  };
+
   return (
     <VStack spacing="10px">
       <FormControl id="email" isRequired>
@@ -105,16 +149,14 @@ const Login = () => {
       >
         Login
       </Button>
+      <p>or</p>
       <Button
         variant="solid"
-        colorScheme="red"
-        width="100%"
-        onClick={() => {
-          setEmail("guest@example.com");
-          setPassword("123456");
-        }}
+        colorScheme="gray"
+        width="50%"
+        onClick={submitGuestHandler}
       >
-        Get Guest User Credentials
+        Login as Guest
       </Button>
     </VStack>
   );
