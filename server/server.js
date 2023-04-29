@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import { chats } from './data/data.js'
 import { connectDB } from './config/dbPool.js';
 import userRoutes from './routes/userRoutes.js';
+import chatRoutes from './routes/chatRoutes.js';
 import { notFound, errorHandler } from "./middleware/error.js";
 
 dotenv.config();
@@ -14,6 +15,7 @@ app.use(express.json()); //accept JSON data from client
 
 //Routes
 app.use("/api/user", userRoutes);
+app.use("/api/chat", chatRoutes);
 
 // Error Handling middleware
 app.use(notFound);
