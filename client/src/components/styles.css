@@ -4,3 +4,9 @@
   overflow-y: scroll;
   scrollbar-width: none;
 }
+
+#notification {
+  font-size:large;
+  background-color: red;
+  color:whitesmoke;
+}

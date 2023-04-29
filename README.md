@@ -49,3 +49,5 @@
     * Navigate to the client directory.
     * Type `npm start`.
     * Wait until the client automatically redirects you to your current web browser.
+
+## Issues: An error occurs when logging in, but can be bypassed by refreshing the browser.

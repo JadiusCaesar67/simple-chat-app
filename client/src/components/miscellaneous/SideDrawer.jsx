@@ -28,6 +28,7 @@ import { Spinner } from "@chakra-ui/spinner";
 import ProfileModal from "./ProfileModal";
 // import NotificationBadge from "react-notification-badge";
 // import { Effect } from "react-notification-badge";
+import NotificationBadge from "../animations/NotificationBell";
 import { getSender } from "../../config/ChatLogics";
 import UserListItem from "../userAvatar/UserListItem";
 import { ChatState } from "../../Context/ChatProvider";
@@ -83,7 +84,7 @@ function SideDrawer() {
       setSearchResult(data);
     } catch (error) {
       toast({
-        title: "Error Occured!",
+        title: "Error Occurred!",
         description: "Failed to Load the Search Results",
         status: "error",
         duration: 5000,
@@ -147,11 +148,10 @@ function SideDrawer() {
         <div>
           <Menu>
             <MenuButton p={1}>
-              {/* <NotificationBadge
-                count={notification.length}
-                effect={Effect.SCALE}
-              /> */}
-              <BellIcon fontSize="2xl" m={1} />
+              <NotificationBadge
+                notificationCount={notification.length}
+                // effect={Effect.SCALE}
+              />
             </MenuButton>
             <MenuList pl={2}>
               {!notification.length && "No New Messages"}
